@@ -9,5 +9,13 @@
     "dotenv": "^16.4.7",
     "nodemon": "^3.1.9",
     "solc-js": "^1.0.1"
+  },
+
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.js",
+    "start": "node ./ignition/modules/server.js",
+    "build" : "npm install "
   }
 }
