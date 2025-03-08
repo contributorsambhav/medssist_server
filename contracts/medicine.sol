@@ -75,8 +75,7 @@ function addMedicine(
 }
 
 
-    // 🛒 **Reserve Medicine & Pay**
-   // 🛒 **Reserve Medicine & Pay**
+  
 function reserveMedicine(uint256 medicineId, uint256 quantity) public payable {
     require(medicineId < medicineCount, "Invalid medicine ID");
     require(quantity > 0, "Quantity must be greater than zero");
@@ -85,10 +84,8 @@ function reserveMedicine(uint256 medicineId, uint256 quantity) public payable {
     uint256 totalCost = medicines[medicineId].pricePerUnit * quantity;
     require(msg.value >= totalCost, "Insufficient payment");
 
-    // Deduct quantity from stock
     medicines[medicineId].quantity -= quantity;
 
-    // Remove medicine if quantity is 0
     if (medicines[medicineId].quantity == 0) {
         delete medicines[medicineId]; // ✅ Removes medicine from mapping
     }
@@ -126,9 +123,6 @@ function reserveMedicine(uint256 medicineId, uint256 quantity) public payable {
     emit ReservationFulfilled(reservationId, reservation.medicineId, reservation.reserver, medicine.seller);
 }
 
-
-    // 📜 **Get All Available Medicines**
-    // 📜 **Get All Available Medicines (Without Empty Entries)**
 function getAllMedicines() public view returns (MedicineData[] memory) {
     uint validCount = 0;
 
@@ -174,7 +168,6 @@ function getAllReservations() public view returns (Reservation[] memory) {
     return allReservations;
 }
 
-    // ⏳ **Check Contract Balance**
     function getContractBalance() public view returns (uint256) {
         return address(this).balance;
     }

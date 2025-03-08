@@ -17,7 +17,6 @@
     "compile": "hardhat compile",
     "test": "hardhat test",
     "deploy": "hardhat run scripts/deploy.js",
-    "start": "node ./ignition/modules/server.js",
-    "build" : "npm install "
+    "start": "node ./ignition/modules/server.js"
   }
 }

@@ -10,9 +10,9 @@ const {
     requestCountController,
     getEntityNameController,
     setEntityNameController
-} = require("./oracle");
+} = require("./ignition/modules/oracle");
 
-const medicineroutes = require("./medicine_routes");
+const medicineroutes = require("./ignition/modules/medicine_routes");
 
 const app = express();
 app.use(express.json());
