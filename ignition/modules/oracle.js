@@ -138,7 +138,7 @@ const addMedicineController = async (req, res) => {
     const tx = await medicineContract.addMedicine(
       name,
       genericName,
-      pricePerUnit/POLbyUSD,
+      pricePerUnit,
       quantity
     );
     await tx.wait();
@@ -159,7 +159,7 @@ const reserveMedicineController = async (req, res) => {
       const pricePerUnit = BigInt(medicine.pricePerUnit); // ✅ Convert to BigInt
 
       // Compute total cost
-      const totalCost = pricePerUnit * BigInt(quantity) / POLbyUSD; // ✅ Ensure both are BigInt
+      const totalCost = pricePerUnit * BigInt(quantity) ; // ✅ Ensure both are BigInt
 
       // Convert BigInt to string before passing to ethers
       const tx = await medicineContract.reserveMedicine(medicineId, quantity, { value: totalCost.toString() });
