@@ -20,9 +20,10 @@ const corsOptions = {
     methods: ["GET,POST"],
 }
 
-app.use(cors(corsOptions));
 const app = express();
 app.use(express.json());
+app.use(cors(corsOptions));
+
 const port = 3000;
 
 app.get("/", (req, res) => {
