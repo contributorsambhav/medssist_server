@@ -35,11 +35,13 @@ const requestContract = new ethers.Contract(
   contractABI,
   wallet
 );
+
 const registeredContract = new ethers.Contract(
   registeredAddress,
   registeredABI,
   wallet
 );
+
 const medicineContract = new ethers.Contract(
   medicineAddress,
   medicineABI,

@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const {
     activeRequestCountController,
     createRequestController,
@@ -14,6 +15,12 @@ const {
 
 const medicineroutes = require("./ignition/modules/medicine_routes");
 
+const corsOptions = {
+    origin: "*",
+    methods: ["GET,POST"],
+}
+
+app.use(cors(corsOptions));
 const app = express();
 app.use(express.json());
 const port = 3000;

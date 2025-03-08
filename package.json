@@ -1,18 +1,15 @@
 {
   "name": "hardhat-project",
-  "devDependencies": {
-   
-  },
   "dependencies": {
-     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.22.19",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "alchemy-sdk": "^3.5.4",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
+    "express": "^4.17.1",
+    "hardhat": "^2.22.19",
     "nodemon": "^3.1.9",
-    "solc-js": "^1.0.1",
-    "express": "^4.17.1"
+    "solc-js": "^1.0.1"
   },
-
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
