@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
     res.send("Hello World");
 })
 
-app.use("/medicine", medicineroutes);
+app.use("/medicine", cors(corsOptions), medicineroutes);
 app.get("/activeRequestCount", activeRequestCountController);
 app.post("/createRequest", createRequestController);
 app.post("/fulfilRequest", fulfilRequestController);
